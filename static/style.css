@@ -1,0 +1,21 @@
+* 
+{
+    font-family: 'Inter', sans-serif;
+    color: #000344;
+    background-color: #E6F2FF;
+}
+
+.logo 
+{
+    width: 46px;
+    height: 41px;
+    margin-left: 140px;
+}
+
+.nav_name
+{
+    position: relative;
+    top: 11px;
+    font-size: 15px;
+}
+
