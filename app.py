@@ -40,15 +40,14 @@ def after_request(response):
 def main():
     return render_template("main.html")
 
-@app.route("/register", methods=["GET", "POST"])
-def register():
+@app.route("/signup", methods=["GET", "POST"])
+def signup():
     """Register user"""
 
-    username = request.form.get("username")
-    password = request.form.get("password")
-    names = db.execute("SELECT username FROM users WHERE username = ?", username)
-
     if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+        names = db.execute("SELECT username FROM users WHERE username = ?", username)
 
         # Check that username isn't blank
         if not username or not password:
@@ -57,6 +56,7 @@ def register():
         # Check there is no same name in database
         if len(names) == 1:
             return apology(username + " is already existed")
+
 
         # Check the two passwords are same
         if password != request.form.get("confirmation"):
@@ -71,7 +71,7 @@ def register():
         return redirect("/")
 
     else:
-        return render_template("register.html")
+        return render_template("signup.html")
 
 
 
@@ -109,3 +109,5 @@ def login():
     # User reached route via GET (as by clicking a link or via redirect)
     else:
         return render_template("login.html")
+
+
