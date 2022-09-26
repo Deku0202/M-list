@@ -6,7 +6,7 @@ from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from helpers import apology, login_required, lookup, usd
+# from helpers import apology, login_required, lookup, usd
 
 # Configure application
 app = Flask(__name__)
@@ -35,6 +35,10 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
+
+@app.route("/")
+def main():
+    return render_template("main.html")
 
 @app.route("/register", methods=["GET", "POST"])
 def register():

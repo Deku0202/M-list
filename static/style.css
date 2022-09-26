@@ -1,21 +1,70 @@
 * 
 {
     font-family: 'Inter', sans-serif;
+    font-weight: bold;
     color: #000344;
     background-color: #E6F2FF;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .logo 
 {
-    width: 46px;
-    height: 41px;
+    width: 43px;
+    height: 37px;
     margin-left: 140px;
 }
 
 .nav_name
 {
     position: relative;
-    top: 11px;
+    top: 10px;
     font-size: 15px;
 }
 
+.main_svg 
+{
+    text-align: right;
+}
+
+.fs-big  p
+{
+    font-size: 5em;
+}
+
+.main-btn 
+{
+    width: 130px;
+    height: 50px;
+    border-radius: 100px;
+    border: #000344 2px solid;
+    margin: 3px;
+}
+
+.btn-f 
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+}
+
+.btn-login, .btn-login span
+{
+    color: #fff;
+    background-color: #000344;
+    
+}
+
+@media screen and (min-width: 993px)
+{
+
+    .h-lg-7
+    {
+        height: 700px;
+    }
+
+    .w-lg-450
+    {
+        width: 450px;
+    }
+}
