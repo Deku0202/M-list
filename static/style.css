@@ -3,10 +3,14 @@
     font-family: 'Inter', sans-serif;
     font-weight: bold;
     color: #000344;
-    background-color: #E6F2FF;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body
+{
+    background-color: #E6F2FF;
 }
 
 .logo 
@@ -62,9 +66,33 @@
     {
         height: 700px;
     }
+    .h-lg-8
+    {
+        height: 750px;
+    }
+
 
     .w-lg-450
     {
         width: 450px;
     }
+
+    .box
+    {
+        width: 530px;
+        height: 700px;
+        background-color: white;
+        border-radius: 15px;
+    }
+
+    .wel
+    {
+        left: 375px;
+        width: 250px;
+        font-size: 3em;
+        position: absolute;
+        top: 165px;
+    }
+
+    
 }
