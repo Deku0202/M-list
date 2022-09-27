@@ -59,6 +59,57 @@ body
     
 }
 
+.h-4
+{
+    height: 45px;
+    width: 100%;
+    border: #000344 solid 1px;
+    border-radius: 4px;
+}
+
+input:focus
+{
+    outline: #000344 solid 1.5px;
+}
+
+.form-check-input
+{
+    accent-color: #000344;
+    border: #000344 1px solid;
+}
+
+.form-check-input:checked
+{
+    background-color: #000344;
+    border-color: #000344;
+}
+
+.form-check-input:focus
+{
+    border: #000344 1px solid;
+    box-shadow: none;
+
+}
+
+.login-btn 
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    width: 150px;
+}
+
+.foot-btn
+{
+    outline: none;
+    border: #000344 1px solid;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #000344;
+    font-size: 0.9em;
+    width: 65px;
+    padding: 2px;
+}
+
 @media screen and (min-width: 993px)
 {
 
@@ -93,6 +144,23 @@ body
         position: absolute;
         top: 165px;
     }
+
+    .login-head
+    {
+        font-weight: bold;
+        font-size: 2.7em;
+    }
+
+    .inner-box
+    {
+        width: 300px;
+    }
+
+    .fs-lg-lab{
+        font-size: 1.3em;
+    }
+
+
 
     
 }
