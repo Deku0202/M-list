@@ -90,8 +90,11 @@ def login():
         password = request.form.get("password")
 
         # Ensure username and password was submitted
-        if not username or not password:
-            return render_template("signup.html")
+        if not username:
+            return render_template("login.html", d=0, password=password)
+
+        if not password:
+            return render_template("login.html", d=1, username=username)
 
         # Query database for username
         rows = db.execute("SELECT * FROM users WHERE username = ?", username)

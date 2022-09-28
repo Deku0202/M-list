@@ -21,6 +21,12 @@ body
     border-radius: 4px;
 }
 
+.enter span
+{   
+    font-weight: normal;
+    color: #da2020;
+}
+
 .logo 
 {
     width: 43px;
@@ -75,9 +81,20 @@ body
     border-radius: 4px;
 }
 
-input:focus
+.need 
+{
+    border: #da2020 solid 2px;
+}
+
+.h-4:focus
 {
     outline: #000344 solid 1.5px;
+}
+
+.need:focus
+{
+    outline: #000344 solid 1.5px;
+    border: #000344 solid 1px;
 }
 
 .form-check-input
