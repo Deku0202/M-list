@@ -13,6 +13,14 @@ body
     background-color: #E6F2FF;
 }
 
+.wrong-box, .wrong-box span
+{
+    background-color: #F7D7DC;
+    color: #602730;
+    font-weight: normal;
+    border-radius: 4px;
+}
+
 .logo 
 {
     width: 43px;

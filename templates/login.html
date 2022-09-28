@@ -15,8 +15,10 @@
         <div class="d-lg-flex h-lg-8 align-items-lg-end">
             <div class="box d-lg-flex justify-content-lg-evenly align-items-lg-center flex-lg-column">
                 <div class="inner-box">
-                    <form action="/login" method="">
+                    <form action="/login" method="post">
                         <h1 class="login-head mb-lg-3">Welcome!</h1>
+
+                        {% block incorrect %}{% endblock %}
                         
                         <div class="mb-lg-3 w-100">
                             <label class="float-lg-start m-2 fs-lg-lab" for="username">
@@ -39,26 +41,25 @@
                                 <input class="h-4 p-lg-3 ps-lg-5" type="password" name="password">
                             </div>
                         </div>
-
+            
                         <div class="form-check text-lg-start m-lg-3">
                             <input class="form-check-input" type="checkbox" name="remember">
                             <label class="form-check-label" for="remember">
                                 remember me
                             </label>
                         </div>
-
+            
                         <button type="submit" class="main-btn btn-login login-btn ">Login</button>
                         
                     </form>
                 </div>                    
                 <div>
                     <div>
-                        <form action="signup">
-                            <label for="">Don't have an account?</label>
-                            <button type="submit" class="foot-btn">Sign up</button>
+                        <form action="/signup" method="get">
+                            <label class="me-2" for="signup">Don't have an account?</label>
+                            <button type="submit" class="foot-btn" name="signup">Sign up</button>
                         </form>
                     </div>
-                    
                 </div>
             </div>
         </div>
