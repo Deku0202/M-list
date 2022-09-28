@@ -17,8 +17,13 @@
                 <div class="inner-box">
                     <form action="/login" method="post">
                         <h1 class="login-head mb-lg-3">Welcome!</h1>
+                        
+                        {% if i == 0 %}
+                        <div class="w-100 p-2 wrong-box">
+                            <span>Incorrect username or password!</span>
+                        </div>
+                        {% endif %}
 
-                        {% block incorrect %}{% endblock %}
                         
                         <div class="mb-lg-3 w-100">
                             <label class="float-lg-start m-2 fs-lg-lab" for="username">
