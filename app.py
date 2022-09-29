@@ -90,6 +90,9 @@ def login():
         password = request.form.get("password")
 
         # Ensure username and password was submitted
+        if not username and not password:
+            return render_template("login.html",a=0)
+
         if not username:
             return render_template("login.html", d=0, password=password)
 

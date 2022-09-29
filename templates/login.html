@@ -30,7 +30,7 @@
                             </label>
                             <br>
 
-                            {% if d == 0 %}
+                            {% if d == 0 or a == 0%}
                             <div>
                                 <i class="fa-solid fa-user position-absolute p-lg-3"></i>
                                 <input class="h-4 need p-lg-3 ps-lg-5" type="text" name="username">
@@ -63,7 +63,7 @@
                             </label>
                             <br>
 
-                            {% if d == 1 %}
+                            {% if d == 1 or a == 0 %}
                             <div>
                                 <i class="fa-solid fa-lock position-absolute p-lg-3"></i>
                                 <input class="h-4 need p-lg-3 ps-lg-5" type="password" name="password">
