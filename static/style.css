@@ -3,10 +3,28 @@
     font-family: 'Inter', sans-serif;
     font-weight: bold;
     color: #000344;
-    background-color: #E6F2FF;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body
+{
+    background-color: #E6F2FF;
+}
+
+.wrong-box, .wrong-box span
+{
+    background-color: #F7D7DC;
+    color: #602730;
+    font-weight: normal;
+    border-radius: 4px;
+}
+
+.enter span
+{   
+    font-weight: normal;
+    color: #da2020;
 }
 
 .logo 
@@ -55,6 +73,68 @@
     
 }
 
+.h-4
+{
+    height: 45px;
+    width: 100%;
+    border: #000344 solid 1px;
+    border-radius: 4px;
+}
+
+.need 
+{
+    border: #da2020 solid 2px;
+}
+
+.h-4:focus
+{
+    outline: #000344 solid 1.5px;
+}
+
+.need:focus
+{
+    outline: #000344 solid 1.5px;
+    border: #000344 solid 1px;
+}
+
+.form-check-input
+{
+    accent-color: #000344;
+    border: #000344 1px solid;
+}
+
+.form-check-input:checked
+{
+    background-color: #000344;
+    border-color: #000344;
+}
+
+.form-check-input:focus
+{
+    border: #000344 1px solid;
+    box-shadow: none;
+
+}
+
+.login-btn 
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    width: 150px;
+}
+
+.foot-btn
+{
+    outline: none;
+    border: #000344 1px solid;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #000344;
+    font-size: 0.9em;
+    width: 65px;
+    padding: 2px;
+}
+
 @media screen and (min-width: 993px)
 {
 
@@ -62,9 +142,50 @@
     {
         height: 700px;
     }
+    .h-lg-8
+    {
+        height: 750px;
+    }
+
 
     .w-lg-450
     {
         width: 450px;
     }
+
+    .box
+    {
+        width: 530px;
+        height: 700px;
+        background-color: white;
+        border-radius: 15px;
+    }
+
+    .wel
+    {
+        left: 375px;
+        width: 250px;
+        font-size: 3em;
+        position: absolute;
+        top: 165px;
+    }
+
+    .login-head
+    {
+        font-weight: bold;
+        font-size: 2.7em;
+    }
+
+    .inner-box
+    {
+        width: 300px;
+    }
+
+    .fs-lg-lab{
+        font-size: 1.3em;
+    }
+
+
+
+    
 }
