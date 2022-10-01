@@ -57,6 +57,7 @@ body
     height: 50px;
     border-radius: 100px;
     border: #000344 2px solid;
+    background-color: #E6F2FF;
     margin: 3px;
 }
 
@@ -70,8 +71,16 @@ body
 {
     color: #fff;
     background-color: #000344;
-    
 }
+
+.btn-login:hover
+{   
+    transition: 0.5s;
+    color: #fff;
+    background-color: #000331;
+}
+
+
 
 .h-4
 {
@@ -121,6 +130,8 @@ body
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5em;
     width: 150px;
+    color: #fff;
+    background-color: #000344;
 }
 
 .foot-btn
