@@ -48,26 +48,69 @@ def signup():
 
         username = request.form.get("username")
         password = request.form.get("password")
-        names = db.execute("SELECT username FROM users WHERE username = ?", username)
+        confirm = request.form.get("confirm")
+        
 
         # Check that username isn't blank
-        if not username or not password:
-            return apology("must provide username or password")
+        if not username  and not password and not confirm:
+            return render_template("signup.html",a=0)
+
+        if username:
+            if not password:
+                if not confirm:
+                    return render_template("signup.html",d=0, username=username)
+                return render_template("signup.html",d=1, username=username, confirm=confirm)
+            
+            if not confirm:
+                return render_template("signup.html",d=2, username=username, password=password)
+
+        if password:
+            if not username:
+                if not confirm:
+                    return render_template("signup.html",d=3, password=password)
+                return render_template("signup.html",d=4, password=password, confirm=confirm)
+
+            if not confirm:
+                return render_template("signup.html",d=2, username=username, password=password)
+        
+        if confirm:
+            if not username:
+                if not password:
+                    return render_template("signup.html",d=5, confirm=confirm)
+                return render_template("signup.html",d=4, password=password, confirm=confirm)
+
+            if not password:
+                return render_template("signup.html",d=1, username=username, confirm=confirm)
+            
+
+
+        # if not username:
+        #     return render_template("signup.html", d=0, password=password, confirm=confirm)
+
+        # if not password and not confirm:
+        #     return render_template("signup.html", d=1, username=username)
+
+        # if not password:
+        #     return render_template("signup.html", d=2, username=username, confirm=confirm)
+
+        # if not confirm:
+        #     return render_template("signup.html", d=3, username=username, password=password)
 
         # Check there is no same name in database
-        if len(names) == 1:
-            return apology(username + " is already existed")
+        # names = db.execute("SELECT username FROM users WHERE username = ?", username)
+        # if len(names) == 1:
+        #     return render_template("signup.html",a=0)
 
 
         # Check the two passwords are same
-        if password != request.form.get("confirmation"):
-            return apology("Put the same password!")
+        # if password != confirm:
+        #     return apology("Put the same password!")
 
         # generate the hash password to insert
-        pwhash = generate_password_hash(password, method='pbkdf2:sha256', salt_length=8)
+        # pwhash = generate_password_hash(password, method='pbkdf2:sha256', salt_length=8)
 
         # Inserting to the DataBase
-        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, pwhash)
+        # db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, pwhash)
 
         return redirect("/")
 
