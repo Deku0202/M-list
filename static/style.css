@@ -146,8 +146,14 @@ body
     padding: 2px;
 }
 
+
+
 @media screen and (min-width: 993px)
 {   
+    .fs-lg-lab
+    {
+    font-size: 1.3em;
+    }
     .h-lg-7
     {
         height: 700px;
@@ -190,9 +196,7 @@ body
         width: 300px;
     }
 
-    .fs-lg-lab{
-        font-size: 1.3em;
-    }
+    
     .display-lg-none
     {
         display: none;
@@ -201,10 +205,19 @@ body
 }
 
 @media screen and (max-width: 993px)
-{      
+{     
+    .fs-sm
+    {
+        font-size: 1.2em;
+    }
+    .mt-xs-4
+    {
+        margin-top: 25px;
+    }
+
     .inner-sm-box
     {
-        width: 50%;
+        width: 70%;
     }
 
     .login-sm-head
@@ -226,7 +239,7 @@ body
     .box-sm
     {
         background-color: #fff;
-        height: 550px;
+        height: 580px;
         width: 100vw;
         border-radius: 45px 45px 0px 0px;
         
