@@ -50,7 +50,6 @@ def signup():
         password = request.form.get("password")
         confirm = request.form.get("confirm")
         
-
         # Check that username isn't blank
         if not username  and not password and not confirm:
             return render_template("signup.html",a=0)
@@ -82,37 +81,22 @@ def signup():
             if not password:
                 return render_template("signup.html",d=1, username=username, confirm=confirm)
             
-
-
-        # if not username:
-        #     return render_template("signup.html", d=0, password=password, confirm=confirm)
-
-        # if not password and not confirm:
-        #     return render_template("signup.html", d=1, username=username)
-
-        # if not password:
-        #     return render_template("signup.html", d=2, username=username, confirm=confirm)
-
-        # if not confirm:
-        #     return render_template("signup.html", d=3, username=username, password=password)
-
         # Check there is no same name in database
-        # names = db.execute("SELECT username FROM users WHERE username = ?", username)
-        # if len(names) == 1:
-        #     return render_template("signup.html",a=0)
-
+        names = db.execute("SELECT username FROM users WHERE username = ?", username)
+        if len(names) == 1:
+            return render_template("signup.html",i=0, password=password, confirm=confirm)
 
         # Check the two passwords are same
-        # if password != confirm:
-        #     return apology("Put the same password!")
+        if password != confirm:
+            return render_template("signup.html",i=1, username=username, password=password)
 
         # generate the hash password to insert
-        # pwhash = generate_password_hash(password, method='pbkdf2:sha256', salt_length=8)
+        pwhash = generate_password_hash(password, method='pbkdf2:sha256', salt_length=8)
 
         # Inserting to the DataBase
-        # db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, pwhash)
+        db.execute("INSERT INTO users (username, hash) VALUES(?, ?)", username, pwhash)
 
-        return redirect("/")
+        return redirect("/login")
 
     else:
         return render_template("signup.html")

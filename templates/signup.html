@@ -26,7 +26,7 @@
                         
                         {% if i == 0 %}
                         <div class="w-100 p-2 wrong-box">
-                            <span>Username Already taken</span>
+                            <span>This username is already taken</span>
                         </div>
                         {% endif %}
                         
@@ -42,16 +42,19 @@
                                 <input class="h-4 need p-3 ps-5" type="text" name="username">
                             </div>
 
+                            {% if i != 0 %}
                             <div class="text-start enter ms-2">
                                 <span>Please enter username</span>
                             </div>
+                            {% endif %}
+
 
                             {% else %}
 
                             <div>
 
                                 <i class="fa-solid fa-user position-absolute p-3"></i> 
-                                {% if d == 0 or d == 1 or d == 2 %}
+                                {% if d == 0 or d == 1 or d == 2 or i == 1%}
                                 <input class="h-4 p-3 ps-5" type="text" name="username" value="{{ username }}">
                                 {% else %}
                                 <input class="h-4 p-3 ps-5" type="text" name="username">
@@ -83,7 +86,7 @@
                             <div>
 
                                 <i class="fa-solid fa-lock position-absolute p-3"></i>
-                                {% if d == 2 or d == 3 or d == 4%}
+                                {% if d == 2 or d == 3 or d == 4 or i == 0 or i == 1%}
                                 <input class="h-4 p-3 ps-5" type="password" name="password" value="{{ password }}">
                                 {% else %}
                                 <input class="h-4 p-3 ps-5" type="password" name="password">
@@ -100,22 +103,29 @@
                             </label>
                             <br>
 
-                            {% if d == 0 or a == 0 or d == 2 or d == 3%}
+                            {% if d == 0 or a == 0 or d == 2 or d == 3 or i == 1 %}
                             <div>
                                 <i class="fa-solid fa-lock position-absolute p-3"></i>
                                 <input class="h-4 need p-3 ps-5" type="password" name="confirm">
                             </div>
 
+                            
+                            {% if i == 1 %}
+                            <div class="text-start enter ms-2">
+                                <span>Password must be same!</span>
+                            </div>
+                            {% else %}
                             <div class="text-start enter ms-2">
                                 <span>Please enter password</span>
                             </div>
+                            {% endif %}
                             
 
                             {% else %}
                             <div>
 
                                 <i class="fa-solid fa-lock position-absolute p-3"></i>
-                                {% if d == 1 or d == 4 or d == 5%}
+                                {% if d == 1 or d == 4 or d == 5 or i == 0 %}
                                 <input class="h-4 p-3 ps-5" type="password" name="confirm" value="{{ confirm }}">
                                 {% else %}
                                 <input class="h-4 p-3 ps-5" type="password" name="confirm">
