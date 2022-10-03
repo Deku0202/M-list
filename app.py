@@ -6,7 +6,7 @@ from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
 
-# from helpers import apology, login_required, lookup, usd
+from helper import login_required
 
 # Configure application
 app = Flask(__name__)
@@ -49,7 +49,6 @@ def logout():
 @app.route("/")
 def main():
     return render_template("main.html")
-
 
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -149,7 +148,7 @@ def login():
         session["user_id"] = rows[0]["id"]
 
         # Redirect user to home page
-        return redirect("/")
+        return redirect("/test")
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
