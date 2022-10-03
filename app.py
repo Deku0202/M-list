@@ -35,10 +35,22 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
+@app.route("/logout")
+def logout():
+    """Log user out"""
+
+    # Forget any user_id
+    session.clear()
+
+    # Redirect user to login form
+    return redirect("/")
+
 
 @app.route("/")
 def main():
     return render_template("main.html")
+
+
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
