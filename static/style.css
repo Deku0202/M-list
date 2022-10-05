@@ -250,7 +250,7 @@ body
     .box-sm
     {
         background-color: #fff;
-        height: 580px;
+        height: 590px;
         width: 100vw;
         border-radius: 45px 45px 0px 0px;
         
@@ -261,6 +261,7 @@ body
         height: 165px;
         border-radius: 100%;
         background-color: #fff;
+        margin: 30px;
     }
 
     .d-sup-flex
@@ -275,12 +276,12 @@ body
 
     .h-sm-full
     {
-        height: 92.5vh;
+        height: 100vh;
     }
 
     .h-sm-main
     {
-        height: 460px;
+        height: 500px;
     }
 
     .fs-main
