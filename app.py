@@ -148,10 +148,21 @@ def login():
         session["user_id"] = rows[0]["id"]
 
         # Redirect user to home page
-        return redirect("/test")
+        return redirect("/search")
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
         return render_template("login.html")
+
+
+@app.route("/search")
+def search():
+
+    if request.method == "POST":
+
+        return render_template("layout1.html")
+
+    else:
+        return render_template("layout.html")
 
 
