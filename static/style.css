@@ -11,6 +11,7 @@
 body
 {
     background-color: #E6F2FF;
+    overflow-x: hidden;
 }
 
 .wrong-box, .wrong-box span
@@ -143,6 +144,18 @@ body
     padding: 2px;
 }
 
+.navigation-item
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item a
+{
+    color: #000344;
+}
+
 
 
 @media screen and (min-width: 993px)
@@ -209,6 +222,52 @@ body
 
 @media screen and (max-width: 993px)
 {     
+
+    .logo 
+    {
+        width: 43px;
+        height: 37px;
+        margin-left: 20px;
+    }
+
+    .navigation-item[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    .navigation-item
+    {   
+        position: fixed;
+        inset: 0 0 0 30%;
+        flex-direction: column;
+        padding: min(30vh, 10rem) 2rem;
+        gap: 2em;
+        z-index: 1000;
+        transform: translateX(100%);
+ 
+        /* UI Properties */
+ 
+        opacity: 1;
+        backdrop-filter: blur(6px) brightness(100%);
+        background: rgb(240 247 255 / 80%);
+    }
+
+    .mobile-nav-toggle
+    {
+        position: absolute;
+        width: 2rem;
+        font-size: 2rem;
+        background: none;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2rem;
+        z-index: 9999;
+        border: 0;
+    }
+
+    .nav-link
+    {
+        padding: 0;
+    }
 
     .h-xs-main
     {
