@@ -257,12 +257,19 @@ body
         position: absolute;
         width: 2rem;
         font-size: 2rem;
+        background-color: transparent;
         background: url(/static/icon-hamburger.svg);
+        background-repeat: no-repeat;
         aspect-ratio: 1;
         top: 2rem;
         right: 2rem;
         z-index: 9999;
         border: 0;
+    }
+
+    .mobile-nav-toggle[aria-expanded="true"]
+    {
+        background: url(../static/icon-close.svg);
     }
 
     .nav-link
