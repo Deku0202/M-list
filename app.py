@@ -48,7 +48,13 @@ def logout():
 
 @app.route("/")
 def main():
-    return render_template("main.html")
+
+    if len(session) != 1:
+        return render_template("main.html")
+
+    else:
+        return render_template("search.html")
+    
 
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -160,9 +166,9 @@ def search():
 
     if request.method == "POST":
 
-        return render_template("layout1.html")
+        return render_template("search.html")
 
     else:
-        return render_template("layout.html")
+        return render_template("search.html")
 
 
