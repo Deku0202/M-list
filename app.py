@@ -53,7 +53,7 @@ def main():
         return render_template("main.html")
 
     else:
-        return render_template("search.html")
+        return render_template("search-mobile.html")
     
 
 
@@ -163,12 +163,7 @@ def login():
 
 @app.route("/search")
 def search():
-
-    if request.method == "POST":
-
-        return render_template("search.html")
-
-    else:
-        return render_template("search.html")
+    
+    return render_template("search.html")
 
 
