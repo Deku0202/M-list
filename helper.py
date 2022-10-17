@@ -17,3 +17,22 @@ def login_required(f):
             return redirect("/login")
         return f(*args, **kwargs)
     return decorated_function
+
+
+def lookup(title):
+
+    url = "https://imdb8.p.rapidapi.com/title/v2/find"
+    q = {"title": "Game","titleType":"movie,tvSeries,tvMiniSeries","limit":"25","sortArg":"moviemeter,asc"}
+
+    headers = {
+            "X-RapidAPI-Key": "092b95aacemsh4b71bfb8d191abap10fc36jsne17d93bc13d8",
+            "X-RapidAPI-Host": "imdb8.p.rapidapi.com"
+        }    
+
+    response = requests.get(url, headers=headers, params=q)
+    search = response.json()
+
+    results = search["results"]
+
+    return results
+

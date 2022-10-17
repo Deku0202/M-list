@@ -1,12 +1,14 @@
 import os
+from unittest import result
 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
+import requests
 
-from helper import login_required
+from helper import login_required, lookup
 
 # Configure application
 app = Flask(__name__)
@@ -48,7 +50,13 @@ def logout():
 
 @app.route("/")
 def main():
-    return render_template("main.html")
+
+    if len(session) != 1:
+        return render_template("main.html")
+
+    else:
+        return render_template("search-mobile.html")
+    
 
 
 @app.route("/signup", methods=["GET", "POST"])
@@ -148,10 +156,20 @@ def login():
         session["user_id"] = rows[0]["id"]
 
         # Redirect user to home page
-        return redirect("/test")
+        return redirect("/")
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
         return render_template("login.html")
+
+
+@app.route("/search", methods=["GET"])
+def search():
+
+    title = request.form.get("title")
+
+    results = lookup(title)
+
+    return render_template("result.html", results=results)
 
 
