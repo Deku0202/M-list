@@ -1,10 +1,12 @@
 import os
+from unittest import result
 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
+import requests
 
 from helper import login_required, lookup
 
@@ -161,9 +163,13 @@ def login():
         return render_template("login.html")
 
 
-@app.route("/search")
+@app.route("/search", methods=["GET"])
 def search():
-    
-    return render_template("search.html")
+
+    title = request.form.get("title")
+
+    results = lookup(title)
+
+    return render_template("result.html", results=results)
 
 

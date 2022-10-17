@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Result
+{% endblock %}
+
+{% block main %}
+    {% for result in results %}
+        <p> {{ result["title"] }} </p>
+    {% endfor %}
+{% endblock %}

@@ -19,29 +19,20 @@ def login_required(f):
     return decorated_function
 
 
-# def lookup(title):
-#     """Look up quote for symbol."""
-#     # url = "https://imdb8.p.rapidapi.com/auto-complete"
-#     # querystring = {"q": title }
-#     # headers = {
-# 	# "X-RapidAPI-Key": "092b95aacemsh4b71bfb8d191abap10fc36jsne17d93bc13d8",
-# 	# "X-RapidAPI-Host": "imdb8.p.rapidapi.com"
-#     # }
-#     # Contact API
-#     try:
-#         api_key = os.environ.get("API_KEY")
-#         response = requests.get(url)
-#         response.raise_for_status()
-#     except requests.RequestException:
-#         return None
+def lookup(title):
 
-#     # Parse response
-#     try:
-#         quote = response.json()
-#         return {
-#             "name": quote["companyName"],
-#             "price": float(quote["latestPrice"]),
-#             "symbol": quote["symbol"]
-#         }
-#     except (KeyError, TypeError, ValueError):
-#         return None
+    url = "https://imdb8.p.rapidapi.com/title/v2/find"
+    q = {"title": "Game","titleType":"movie,tvSeries,tvMiniSeries","limit":"25","sortArg":"moviemeter,asc"}
+
+    headers = {
+            "X-RapidAPI-Key": "092b95aacemsh4b71bfb8d191abap10fc36jsne17d93bc13d8",
+            "X-RapidAPI-Host": "imdb8.p.rapidapi.com"
+        }    
+
+    response = requests.get(url, headers=headers, params=q)
+    search = response.json()
+
+    results = search["results"]
+
+    return results
+
