@@ -6,7 +6,7 @@ from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from helper import login_required
+from helper import login_required, lookup
 
 # Configure application
 app = Flask(__name__)
@@ -154,7 +154,7 @@ def login():
         session["user_id"] = rows[0]["id"]
 
         # Redirect user to home page
-        return redirect("/search")
+        return redirect("/")
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
