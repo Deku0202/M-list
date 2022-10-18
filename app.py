@@ -166,9 +166,9 @@ def login():
 @app.route("/search", methods=["GET"])
 def search():
 
-    title = request.form.get("title")
+    t = request.args.get("t")
 
-    results = lookup(title)
+    results = lookup(str(t))
 
     return render_template("result.html", results=results)
 
