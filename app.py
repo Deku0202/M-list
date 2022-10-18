@@ -166,10 +166,10 @@ def login():
 @app.route("/search", methods=["GET"])
 def search():
 
-    t = request.args.get("t")
+    title = request.args.get("title")
 
-    results = lookup(str(t))
+    results = lookup(str(title))
 
-    return render_template("result.html", results=results)
+    return render_template("result.html", results=results, title=title)
 
 

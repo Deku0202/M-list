@@ -5,7 +5,30 @@
 {% endblock %}
 
 {% block main %}
-    {% for result in results %}
-        <p> {{ result["title"] }} </p>
-    {% endfor %}
+
+    <div class="d-flex justify-content-center mt-5 mb-5">
+        <div class="result-box p-3 pt-5 pb-5">
+            <h1>Result for {{ title }}</h1>
+            <h1>Name</h1>
+
+            <table>
+                <tbody>
+                    {% for result in results %}
+                    {% if result["image"] %}
+                    <tr>
+                        <td class="pe-2">1.</td>
+                        <td><img class="img" src="{{ result["image"]["url"] }}" alt=""></td>
+                        <td class="fs-small ps-3 text-start">{{ result["title"] }}</td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    
 {% endblock %}

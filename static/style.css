@@ -14,6 +14,24 @@ body
     overflow-x: hidden;
 }
 
+table
+{
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+.result-box
+{
+    width: 90vw;
+    background-color: #fff;
+}
+
+.img
+{
+    width: 34px;
+    height: 50px;
+}
+
 .search-bar
 {
     width: 55vw;
@@ -407,6 +425,11 @@ body
     .btn-sm
     {
         background-color: #fff;
+    }
+
+    .fs-small
+    {
+        font-size: 0.8rem;
     }
 
 }
