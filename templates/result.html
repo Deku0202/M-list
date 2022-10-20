@@ -14,12 +14,18 @@
             <table>
                 <tbody>
                     {% for result in results %}
+                    {% set row_no = loop.index %}
                     {% if result["image"] %}
                     <tr>
-                        <td class="pe-2">1.</td>
-                        <td><img class="img" src="{{ result["image"]["url"] }}" alt=""></td>
+                        <td class="pe-2">{{ row_no }}</td>
+                        <td><img class="img" src="{{ result["image"]["url"] }}" alt="img"></td>
                         <td class="fs-small ps-3 text-start">{{ result["title"] }}</td>
-                
+                        <td>
+                            <form action="/add" method="POST" onsubmit="add(event, {{ row_no }})">
+                                <input hidden id="title_{{ row_no }}" value="{{ result["id"] }}">
+                                <button type="submit"></button>
+                            </form>
+                        </td>
                     </tr>
                     {% endif %}
                     {% endfor %}
