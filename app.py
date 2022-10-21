@@ -166,10 +166,24 @@ def login():
 @app.route("/search", methods=["GET"])
 def search():
 
-    title = request.form.get("title")
+    title = request.args.get("title")
 
-    results = lookup(title)
+    results = lookup(str(title))
 
-    return render_template("result.html", results=results)
+    return render_template("result.html", results=results, title=title)
 
+@app.route("/add", methods=["POST"])
+def add():
 
+    if request.method == "POST":
+
+        title = request.form.get("title")
+        arr = ["/title/", "/"]
+
+        for a in arr:
+            title = title.replace(a, "")
+
+        db.execute("INSERT INTO p_list (user_id, name) VALUES(?, ?)",
+                   session["user_id"], title)
+                   
+    return redirect("/")

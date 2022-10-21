@@ -5,7 +5,33 @@
 {% endblock %}
 
 {% block main %}
-    {% for result in results %}
-        <p> {{ result["title"] }} </p>
-    {% endfor %}
+
+    <div class="d-flex justify-content-center mt-5 mb-5">
+        <div class="result-box p-3 pt-5 pb-5">
+            <h1 class="mb-3">Results for "{{ title }}"</h1>
+
+            <table>
+                <tbody>
+                    {% for result in results %}
+                    {% set row_no = loop.index %}
+                    {% if result["image"] %}
+                    <tr>
+                        <td class="pe-2">{{ row_no }}.</td>
+                        <td><img class="img" src="{{ result["image"]["url"] }}" alt="img"></td>
+                        <td class="fs-small ps-3 text-start">{{ result["title"] }}</td>
+                        <td>
+                            <form class="ms-3 me-3" action="/add" method="POST" onsubmit="add(event, {{ row_no }})">
+                                <input hidden id="title_{{ row_no }}" value="{{ result["id"] }}">
+                                <button class="add" type="submit"><i class="fa-solid fa-circle-plus"></i></button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    
 {% endblock %}

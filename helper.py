@@ -22,7 +22,7 @@ def login_required(f):
 def lookup(title):
 
     url = "https://imdb8.p.rapidapi.com/title/v2/find"
-    q = {"title": "Game","titleType":"movie,tvSeries,tvMiniSeries","limit":"25","sortArg":"moviemeter,asc"}
+    q = {"title": title,"titleType":"movie,tvSeries,tvMiniSeries","limit":"25","sortArg":"moviemeter,asc"}
 
     headers = {
             "X-RapidAPI-Key": "092b95aacemsh4b71bfb8d191abap10fc36jsne17d93bc13d8",
