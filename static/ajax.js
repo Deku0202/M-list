@@ -5,10 +5,6 @@ function add(e, num){
       url:'/add',
       data:{
          title:$("#title_"+num).val()
-      },
-      success:function()
-      {
-        alert('Reassignment Submitted.');
       }
     })
   };
