@@ -5,6 +5,14 @@ function add(e, num){
       url:'/add',
       data:{
          title:$("#title_"+num).val()
+      },
+      success: function() { 
+        $('.message').fadeIn('slow');
+        //$('#msg').html("data insert successfully").fadeIn('slow') //also show a success message 
+        $('.message').delay(3000).fadeOut('slow');
+      },
+      error: function () {
+        console.log("error")
       }
     })
   };

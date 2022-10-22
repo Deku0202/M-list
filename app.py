@@ -7,6 +7,9 @@ from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
 import requests
+from flask import jsonify
+
+
 
 from helper import login_required, lookup
 
@@ -183,7 +186,15 @@ def add():
         for a in arr:
             title = title.replace(a, "")
 
-        db.execute("INSERT INTO p_list (user_id, name) VALUES(?, ?)",
-                   session["user_id"], title)
+        title = {"name": title}
+
+        own = db.execute("SELECT name FROM p_list WHERE user_id = ?", session["user_id"])
+
+        if title in own:
+            return jsonify({'error': 'Admin access is required'}), 401
+
+        else:
+            db.execute("INSERT INTO p_list (user_id, name) VALUES(?, ?)", session["user_id"], title["name"])
+            return jsonify({'success': 'good'}), 200
                    
     return redirect("/")

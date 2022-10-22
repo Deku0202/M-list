@@ -7,10 +7,10 @@
 {% block main %}
 
     <div class="d-flex justify-content-center mt-5 mb-5">
-        <div class="result-box p-3 pt-5 pb-5">
-            <h1 class="mb-3">Results for "{{ title }}"</h1>
+        <div class="result-box pt-5 pb-5">
+            <h1 class="mb-5">Results for "{{ title }}"</h1>
 
-            <table>
+            <table class="w-100">
                 <tbody>
                     {% for result in results %}
                     {% set row_no = loop.index %}
@@ -18,7 +18,7 @@
                     <tr>
                         <td class="pe-2">{{ row_no }}.</td>
                         <td><img class="img" src="{{ result["image"]["url"] }}" alt="img"></td>
-                        <td class="fs-small ps-3 text-start">{{ result["title"] }}</td>
+                        <td class="fs-small ps-3 text-start">{{ result["title"] }} ({{ result["year"] }})</td>
                         <td>
                             <form class="ms-3 me-3" action="/add" method="POST" onsubmit="add(event, {{ row_no }})">
                                 <input hidden id="title_{{ row_no }}" value="{{ result["id"] }}">
@@ -30,6 +30,12 @@
                     {% endfor %}
                 </tbody>
             </table>
+        </div>
+
+        <div class="message">
+            <div class="success" role="alert" >
+                Added to Yourlist
+            </div>
         </div>
         
     </div>
