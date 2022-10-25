@@ -37,6 +37,19 @@ table
     border-radius: 10px;
 }
 
+.error
+{
+    position: fixed;
+    padding: 15px;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffff;
+    background-color: #ef2f2f;
+    border-radius: 10px;
+}
+
+
 .name
 {
     font-size: 1.2rem;
