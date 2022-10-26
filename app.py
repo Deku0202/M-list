@@ -198,3 +198,10 @@ def add():
             return jsonify({'success': 'good'}), 200
                    
     return redirect("/")
+
+
+@app.route("/list")
+def plist():
+
+        
+    return render_template("list.html")
