@@ -11,7 +11,7 @@ from flask import jsonify
 
 
 
-from helper import login_required, lookup
+from helper import login_required, lookup, look
 
 # Configure application
 app = Flask(__name__)
@@ -203,5 +203,12 @@ def add():
 @app.route("/list")
 def plist():
 
+    tempdict = []
+
+    plist = db.execute("SELECT name FROM p_list WHERE user_id = ?", session["user_id"])
+
+    for one in plist:
+        i = look(one["name"]) 
+        tempdict.append(i)
         
-    return render_template("list.html")
+    return render_template("list.html", list=tempdict)

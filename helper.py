@@ -36,3 +36,20 @@ def lookup(title):
 
     return results
 
+
+def look(title):
+
+    url = "https://imdb8.p.rapidapi.com/title/find"
+    q = {"q": title}
+
+    headers = {
+            "X-RapidAPI-Key": "092b95aacemsh4b71bfb8d191abap10fc36jsne17d93bc13d8",
+            "X-RapidAPI-Host": "imdb8.p.rapidapi.com"
+        }    
+ 
+    response = requests.get(url, headers=headers, params=q)
+    search = response.json()
+
+    results = search["results"]
+
+    return results

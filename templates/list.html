@@ -5,4 +5,29 @@
 {% endblock %}
 
 {% block main %}
+    <div class="d-flex align-items-center flex-column pt-5">
+        <div class="m-box d-flex justify-content-between">
+            <div class="d-flex">
+                <form action="" class="p-2">
+                    <select class="form-select select" aria-label="Default select example">
+                        <option selected>Types</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                </form>
+    
+                <form action="" class="p-2">
+                    <button class="btn btn-primary" type="submit">Delete</button>
+                </form>
+            </div>
+            <div>
+                <button class="add p-2" type="submit"><i class="fa-solid fa-circle-plus"><a href="/"></a></i></button>
+            </div>
+        </div>
+        <div class="result-box">
+
+        </div>
+    </div>
+
 {% endblock %}
