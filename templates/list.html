@@ -34,13 +34,15 @@
                 <button class="add p-2"><a href="/"><i class="fa-solid fa-circle-plus"></i></a></button>
             </div>
         </div>
-        <div class="result-box">
+        <div class="result-box-list">
 
             <table class="w-100">
                 <thead>
                     <td></td>
                     <td></td>
                     <td>Name</td>
+                    <td>Date</td>
+                    <td>Types</td>
                     <td>Rating</td>
                 </thead>
                 <tbody>
@@ -49,8 +51,10 @@
                     {% set row_no = loop.index %}
                     <tr>
                         <td class="pe-2">{{ row_no }}.</td>
-                        <td><img class="img" src="{{ list["image"]["url"] }}" alt="img"></td>
-                        <td class="fs-small ps-3 text-start">{{ list["title"] }}</td>
+                        <td class="img"><img class="img" src="{{ list["image"]["url"] }}" alt="img"></td>
+                        <td class="fs-small ps-3 text-start lg-title">{{ list["title"] }}</td>
+                        <td class="display-med-none">{{ list["year"] }}</td>
+                        <td class="display-med-none">{{ list["titleType"] }}</td>
                         <td class="rating">{{ list["rating"] }}</td>
                     </tr>
                     {% endfor %}

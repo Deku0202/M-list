@@ -21,13 +21,14 @@ def login_required(f):
 
 def lookup(title):
 
-    url = "https://imdb8.p.rapidapi.com/title/v2/find"
+    url = "https://online-movie-database.p.rapidapi.com/title/v2/find"
+
     q = {"title": title,"titleType":"movie,tvSeries,tvMiniSeries","limit":"25","sortArg":"moviemeter,asc"}
 
     headers = {
             "X-RapidAPI-Key": "092b95aacemsh4b71bfb8d191abap10fc36jsne17d93bc13d8",
-            "X-RapidAPI-Host": "imdb8.p.rapidapi.com"
-        }    
+	        "X-RapidAPI-Host": "online-movie-database.p.rapidapi.com"
+        }
 
     response = requests.get(url, headers=headers, params=q)
     search = response.json()
@@ -39,12 +40,12 @@ def lookup(title):
 
 def look(title):
 
-    url = "https://imdb8.p.rapidapi.com/title/find"
+    url = "https://online-movie-database.p.rapidapi.com/title/find"
     q = {"q": title}
 
     headers = {
             "X-RapidAPI-Key": "092b95aacemsh4b71bfb8d191abap10fc36jsne17d93bc13d8",
-            "X-RapidAPI-Host": "imdb8.p.rapidapi.com"
+            "X-RapidAPI-Host": "online-movie-database.p.rapidapi.com"
         }    
  
     response = requests.get(url, headers=headers, params=q)
@@ -56,13 +57,13 @@ def look(title):
 
 def rating(title):
     
-    url = "https://imdb8.p.rapidapi.com/title/get-ratings"
+    url = "https://online-movie-database.p.rapidapi.com/title/get-ratings"
 
     q = {"tconst":title}
 
     headers = {
             "X-RapidAPI-Key": "092b95aacemsh4b71bfb8d191abap10fc36jsne17d93bc13d8",
-            "X-RapidAPI-Host": "imdb8.p.rapidapi.com"
+            "X-RapidAPI-Host": "online-movie-database.p.rapidapi.com"
         }    
 
     response = requests.get(url, headers=headers, params=q)

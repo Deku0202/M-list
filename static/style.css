@@ -88,6 +88,13 @@ table
     border-radius: 10px;
     padding: 1rem;
 }
+.result-box-list
+{
+    width: 90vw;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+}
 
 .m-box
 {
@@ -300,7 +307,13 @@ table
     .result-box
     {
         width: 50vw;
-        padding: 2rem;
+        padding: 0 2rem 2rem 2rem;
+    }
+
+    .result-box-list
+    {
+        width: 50vw;
+        padding: 0 2rem 2rem 2rem;
     }
 
     .m-box{
@@ -308,6 +321,13 @@ table
     }
 }
 
+@media screen and (max-width: 993px)
+{
+    .display-med-none
+        {
+            display: none;
+        }
+}
 
 @media screen and (min-width: 993px)
 {   
@@ -315,6 +335,13 @@ table
     {
         width: 30vw;
 
+    }
+
+    .result-box-list
+    {
+        width: 90vw;
+        padding: 0 2rem 2rem 2rem;
+        
     }
 
     .fs-lg-big  p
@@ -382,6 +409,11 @@ table
     .display-lg-none
     {
         display: none;
+    }
+
+    .lg-title
+    {
+        width: 500px;
     }
     
 }
