@@ -53,3 +53,21 @@ def look(title):
     results = search["results"]
 
     return results
+
+def rating(title):
+    
+    url = "https://imdb8.p.rapidapi.com/title/get-ratings"
+
+    q = {"tconst":title}
+
+    headers = {
+            "X-RapidAPI-Key": "092b95aacemsh4b71bfb8d191abap10fc36jsne17d93bc13d8",
+            "X-RapidAPI-Host": "imdb8.p.rapidapi.com"
+        }    
+
+    response = requests.get(url, headers=headers, params=q)
+    raw = response.json()
+
+    rating = raw["rating"]
+
+    return rating

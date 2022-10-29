@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Result
+    List
 {% endblock %}
 
 {% block main %}
@@ -31,10 +31,31 @@
                 </form>
             </div>
             <div>
-                <button class="add p-2" type="submit"><i class="fa-solid fa-circle-plus"><a href="/"></a></i></button>
+                <button class="add p-2"><a href="/"><i class="fa-solid fa-circle-plus"></i></a></button>
             </div>
         </div>
         <div class="result-box">
+
+            <table class="w-100">
+                <thead>
+                    <td></td>
+                    <td></td>
+                    <td>Name</td>
+                    <td>Rating</td>
+                </thead>
+                <tbody>
+                    
+                    {% for list in lists %}
+                    {% set row_no = loop.index %}
+                    <tr>
+                        <td class="pe-2">{{ row_no }}.</td>
+                        <td><img class="img" src="{{ list["image"]["url"] }}" alt="img"></td>
+                        <td class="fs-small ps-3 text-start">{{ list["title"] }}</td>
+                        <td class="rating">{{ list["rating"] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
 
         </div>
     </div>

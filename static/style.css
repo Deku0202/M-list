@@ -388,7 +388,10 @@ table
 
 @media screen and (max-width: 993px)
 {     
-
+    .rating
+    {
+        width: 70px;
+    }
     .logo 
     {
         width: 43px;
