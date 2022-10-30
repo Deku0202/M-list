@@ -41,8 +41,8 @@
                     <td></td>
                     <td></td>
                     <td>Name</td>
-                    <td>Date</td>
-                    <td>Types</td>
+                    <td class="display-med-none">Date</td>
+                    <td class="display-med-none">Types</td>
                     <td>Rating</td>
                 </thead>
                 <tbody>
@@ -51,10 +51,11 @@
                     {% set row_no = loop.index %}
                     <tr>
                         <td class="pe-2">{{ row_no }}.</td>
-                        <td class="img"><img class="img" src="{{ list["image"]["url"] }}" alt="img"></td>
-                        <td class="fs-small ps-3 text-start lg-title">{{ list["title"] }}</td>
-                        <td class="display-med-none">{{ list["year"] }}</td>
-                        <td class="display-med-none">{{ list["titleType"] }}</td>
+                        <td class="img"><img class="img" src="{{ list["img"] }}" alt="img"></td>
+                        <td class="fs-small ps-3 text-start lg-title">{{ list["name"] }}</td>
+                        <td hidden>{{ list["title"] }}</td>
+                        <td class="display-med-none">{{ list["date"] }}</td>
+                        <td class="display-med-none">{{ list["type"] }}</td>
                         <td class="rating">{{ list["rating"] }}</td>
                     </tr>
                     {% endfor %}

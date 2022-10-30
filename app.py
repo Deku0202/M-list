@@ -181,6 +181,11 @@ def add():
     if request.method == "POST":
 
         title = request.form.get("title")
+        name = request.form.get("name")
+        date = request.form.get("date")
+        Type = request.form.get("type")
+        img = request.form.get("img")
+
         arr = ["/title/", "/"]
 
         for a in arr:
@@ -188,13 +193,15 @@ def add():
 
         title = {"name": title}
 
+        rate = rating(title["name"]) 
+
         own = db.execute("SELECT name FROM p_list WHERE user_id = ?", session["user_id"])
 
         if title in own:
             return jsonify({'error': 'Admin access is required'}), 401
 
         else:
-            db.execute("INSERT INTO p_list (user_id, name) VALUES(?, ?)", session["user_id"], title["name"])
+            db.execute("INSERT INTO p_list (user_id, name, title, date, type, rating, img) VALUES(?, ?, ?, ?, ?, ?, ?)", session["user_id"], name, title["name"], date, Type, rate, img)
             return jsonify({'success': 'good'}), 200
                    
     return redirect("/")
@@ -205,11 +212,6 @@ def plist():
 
     lists = []
 
-    plist = db.execute("SELECT name FROM p_list WHERE user_id = ?", session["user_id"])
-
-    for one in plist:
-        i = look(one["name"])
-        i[0]["rating"] = rating(one["name"]) 
-        lists.append(i[0])
+    plist = db.execute("SELECT * FROM p_list WHERE user_id = ?", session["user_id"])
         
-    return render_template("list.html", lists=lists)
+    return render_template("list.html", lists=plist)
