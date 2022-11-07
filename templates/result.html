@@ -22,6 +22,10 @@
                         <td>
                             <form class="ms-3 me-3" action="/add" method="POST" onsubmit="add(event, {{ row_no }})">
                                 <input hidden id="title_{{ row_no }}" value="{{ result["id"] }}">
+                                <input hidden id="name_{{ row_no }}" value="{{ result["title"] }}">
+                                <input hidden id="date_{{ row_no }}" value="{{ result["year"] }}">
+                                <input hidden id="type_{{ row_no }}" value="{{ result["titleType"] }}">
+                                <input hidden id="img_{{ row_no }}" value="{{ result["image"]["url"] }}">
                                 <button class="add" type="submit"><i class="fa-solid fa-circle-plus"></i></button>
                             </form>
                         </td>
