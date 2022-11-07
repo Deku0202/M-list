@@ -215,3 +215,17 @@ def plist():
     plist = db.execute("SELECT * FROM p_list WHERE user_id = ?", session["user_id"])
         # justwanttotakeappointment
     return render_template("list.html", lists=plist)
+
+@app.route("/delete", methods=["GET", "POST"])
+def delete():
+
+    if request.method == "POST":
+
+
+        return redirect("/list")
+
+    else:
+
+        return 
+        
+
