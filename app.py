@@ -210,8 +210,6 @@ def add():
 @app.route("/list")
 def plist():
 
-    lists = []
-
     plist = db.execute("SELECT * FROM p_list WHERE user_id = ?", session["user_id"])
         # justwanttotakeappointment
     return render_template("list.html", lists=plist)
@@ -225,7 +223,7 @@ def delete():
         return redirect("/list")
 
     else:
-
-        return 
+        plist = db.execute("SELECT * FROM p_list WHERE user_id = ?", session["user_id"])
+        return render_template("delete.html", lists=plist)
         
 
