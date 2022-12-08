@@ -41,6 +41,7 @@ def after_request(response):
     return response
 
 @app.route("/logout")
+@login_required
 def logout():
     """Log user out"""
 
@@ -167,6 +168,7 @@ def login():
 
 
 @app.route("/search", methods=["GET"])
+@login_required
 def search():
 
     title = request.args.get("title")
@@ -208,6 +210,7 @@ def add():
 
 
 @app.route("/list")
+@login_required
 def plist():
 
     plist = db.execute("SELECT * FROM p_list WHERE user_id = ?", session["user_id"])
