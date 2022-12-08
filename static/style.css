@@ -56,6 +56,11 @@ table
     color: #fff;
 }
 
+.delete:hover
+{
+    background-color: #e22c2c;
+}
+
 .success
 {
     position: fixed;
