@@ -227,7 +227,7 @@ def delete():
 
         title = str(request.form.get("title"))
         db.execute("DELETE FROM p_list WHERE user_id = ? AND title = ?", session["user_id"], title)
-        return redirect("/list")
+        return redirect("/delete")
 
     else:
         plist = db.execute("SELECT * FROM p_list WHERE user_id = ?", session["user_id"])
