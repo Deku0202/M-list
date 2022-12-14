@@ -222,7 +222,8 @@ def delete():
 
     if request.method == "POST":
 
-
+        title = str(request.form.get("title"))
+        db.execute("DELETE FROM p_list WHERE user_id = ? AND title = ?", session["user_id"], title)
         return redirect("/list")
 
     else:
