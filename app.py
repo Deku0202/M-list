@@ -195,7 +195,10 @@ def add():
 
         title = {"name": title}
 
-        rate = rating(title["name"]) 
+        try:
+            rate = rating(title["name"])
+        except:
+            rate = "N/A"
 
         own = db.execute("SELECT name FROM p_list WHERE user_id = ?", session["user_id"])
 
