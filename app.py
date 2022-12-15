@@ -184,6 +184,41 @@ def add():
     if request.method == "POST":
 
         title = request.form.get("title")
+        # name = request.form.get("name")
+        # date = request.form.get("date")
+        # Type = request.form.get("type")
+        # img = request.form.get("img")
+
+        arr = ["/title/", "/"]
+
+        for a in arr:
+            title = title.replace(a, "")
+
+        title = {"title": title}
+
+        # try:
+        #     rate = rating(title["name"])
+        # except:
+        #     rate = "N/A"
+
+        own = db.execute("SELECT title FROM p_list WHERE user_id = ?", session["user_id"])
+
+        if title in own:
+            return jsonify({'error': 'Admin access is required'}), 401
+
+        else:
+            # db.execute("INSERT INTO p_list (user_id, name, title, date, type, rating, img) VALUES(?, ?, ?, ?, ?, ?, ?)", session["user_id"], name, title["name"], date, Type, rate, img)
+            return jsonify({'success': 'good'}), 200
+                   
+    return redirect("/")
+
+@app.route("/added", methods=["POST"])
+@login_required
+def added():
+
+    if request.method == "POST":
+
+        title = request.form.get("title")
         name = request.form.get("name")
         date = request.form.get("date")
         Type = request.form.get("type")
@@ -194,22 +229,22 @@ def add():
         for a in arr:
             title = title.replace(a, "")
 
-        title = {"title": title}
+        title = {"name": title}
 
         try:
             rate = rating(title["name"])
         except:
             rate = "N/A"
 
-        own = db.execute("SELECT title FROM p_list WHERE user_id = ?", session["user_id"])
 
-        if title in own:
-            return jsonify({'error': 'Admin access is required'}), 401
+        own = db.execute("SELECT name FROM p_list WHERE user_id = ?", session["user_id"])
 
-        else:
-            db.execute("INSERT INTO p_list (user_id, name, title, date, type, rating, img) VALUES(?, ?, ?, ?, ?, ?, ?)", session["user_id"], name, title["name"], date, Type, rate, img)
-            return jsonify({'success': 'good'}), 200
-                   
+        # if title in own:
+        #     return jsonify({'error': 'Admin access is required'}), 401
+
+        db.execute("INSERT INTO p_list (user_id, name, title, date, type, rating, img) VALUES(?, ?, ?, ?, ?, ?, ?)", session["user_id"], name, title["name"], date, Type, rate, img)
+        return jsonify({'success': 'good'}), 200
+
     return redirect("/")
 
 
