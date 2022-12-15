@@ -172,12 +172,13 @@ def login():
 def search():
 
     title = request.args.get("title")
-
+    
     results = lookup(str(title))
 
     return render_template("result.html", results=results, title=title)
 
 @app.route("/add", methods=["POST"])
+@login_required
 def add():
 
     if request.method == "POST":
@@ -193,14 +194,14 @@ def add():
         for a in arr:
             title = title.replace(a, "")
 
-        title = {"name": title}
+        title = {"title": title}
 
         try:
             rate = rating(title["name"])
         except:
             rate = "N/A"
 
-        own = db.execute("SELECT name FROM p_list WHERE user_id = ?", session["user_id"])
+        own = db.execute("SELECT title FROM p_list WHERE user_id = ?", session["user_id"])
 
         if title in own:
             return jsonify({'error': 'Admin access is required'}), 401
@@ -221,6 +222,7 @@ def plist():
     return render_template("list.html", lists=plist)
 
 @app.route("/delete", methods=["GET", "POST"])
+@login_required
 def delete():
 
     if request.method == "POST":
