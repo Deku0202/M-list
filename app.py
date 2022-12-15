@@ -41,6 +41,7 @@ def after_request(response):
     return response
 
 @app.route("/logout")
+@login_required
 def logout():
     """Log user out"""
 
@@ -167,6 +168,7 @@ def login():
 
 
 @app.route("/search", methods=["GET"])
+@login_required
 def search():
 
     title = request.args.get("title")
@@ -193,7 +195,10 @@ def add():
 
         title = {"name": title}
 
-        rate = rating(title["name"]) 
+        try:
+            rate = rating(title["name"])
+        except:
+            rate = "N/A"
 
         own = db.execute("SELECT name FROM p_list WHERE user_id = ?", session["user_id"])
 
@@ -208,6 +213,7 @@ def add():
 
 
 @app.route("/list")
+@login_required
 def plist():
 
     plist = db.execute("SELECT * FROM p_list WHERE user_id = ?", session["user_id"])
@@ -219,8 +225,9 @@ def delete():
 
     if request.method == "POST":
 
-
-        return redirect("/list")
+        title = str(request.form.get("title"))
+        db.execute("DELETE FROM p_list WHERE user_id = ? AND title = ?", session["user_id"], title)
+        return redirect("/delete")
 
     else:
         plist = db.execute("SELECT * FROM p_list WHERE user_id = ?", session["user_id"])
