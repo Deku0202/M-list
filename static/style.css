@@ -54,11 +54,22 @@ table
     border-radius: 0.7rem;
     background-color: #ef2f2f;
     color: #fff;
+    transition: 1s ease-out;
+}
+
+.bin-1
+{
+    transition: 0.5s ease-out;
 }
 
 .delete:hover
-{
+{   
     background-color: #e22c2c;
+}
+
+.bin-1:hover
+{   
+    fill: #e02929;
 }
 
 .success
