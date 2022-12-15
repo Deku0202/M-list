@@ -10,6 +10,7 @@
         <div class="result-box pt-5 pb-5">
             <h1 class="mb-5">Results for "{{ title }}"</h1>
 
+            {% if results %}
             <table class="w-100">
                 <tbody>
                     {% for result in results %}
@@ -34,6 +35,9 @@
                     {% endfor %}
                 </tbody>
             </table>
+            {% else %}
+            <div><h1>Not Found</h1></div>
+            {% endif %}
         </div>
 
         <div class="message 200">

@@ -173,9 +173,12 @@ def search():
 
     title = request.args.get("title")
     
-    results = lookup(str(title))
+    try:
+        results = lookup(str(title))
+        return render_template("result.html", results=results, title=title)
+    except:
+        return render_template("result.html", title=title)
 
-    return render_template("result.html", results=results, title=title)
 
 @app.route("/add", methods=["POST"])
 @login_required
