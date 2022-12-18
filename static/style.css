@@ -322,6 +322,11 @@ table
 .nav-item a
 {
     color: #000344;
+    transition: 0.5s;
+}
+.nav-item a:hover, .nav-item a:focus
+{
+    color: #01088d;
 }
 
 
