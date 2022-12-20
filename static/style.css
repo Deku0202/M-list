@@ -372,6 +372,18 @@ table
         
     }
 
+    #marker
+    {
+        position: absolute;
+        right: 0;
+        height: 4px;
+        width: 0;
+        background-color: #000;
+        bottom: 20px;
+        transition: 0.5s;
+        border-radius: 4px;
+    }
+
     .fs-lg-big  p
     {
         font-size: 5em;

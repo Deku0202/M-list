@@ -38,9 +38,10 @@
           
         </button>
 
-        <nav>
+        <div>
 
               <ul id="navigation-item" data-visible="false" class="navigation-item d-flex">
+                <div id="marker"></div>
                 <li class="nav-item">
                   <a class="nav-link " aria-current="page" href="/list">List</a>
                 </li>
@@ -62,8 +63,36 @@
                 </li>
 
               </ul>
-          
-      </nav>
+          <script type="text/javascript">
+            var marker = document.querySelector("#marker");
+            var item = document.querySelectorAll("li .nav-link")
+
+            function indicator(e)
+            {
+              marker.style.left = e.offsetLeft+"px";
+              marker.style.width = e.offsetWidth+"px";
+            }
+
+
+            function off(e)
+            {
+              marker.style.right = 0+"px";
+              marker.style.width = 0+"px";
+            }
+
+            item.forEach(link => {
+              link.addEventListener("mouseover", (e) => {
+                indicator(e.target);
+              })
+
+              link.addEventListener("mouseout", (e) => {
+                off(e.target);
+              })
+            })
+
+          </script>
+      </div>
+
       </header>
 
 
