@@ -20,6 +20,34 @@ table
     border-spacing: 0 20px;
 }
 
+.border-pass
+{
+    border-radius: 14px;
+    padding: 15px 25px;
+    background-color: white;
+    color: #000344;
+    font-size: 1.1rem;
+    border: none;
+}
+
+.border-pass:hover
+{
+    background-color: rgb(250, 250, 250);
+    color: #00044e;
+}
+
+.border-pass:focus
+{
+    outline: 0;
+    box-shadow: none;
+}
+
+.user
+{
+    width: 50%;
+    border-radius: 50%;
+}
+
 .bin
 {
     border: none;

@@ -274,3 +274,11 @@ def delete():
         return render_template("delete.html", lists=plist)
         
 
+@app.route("/account", methods=["GET"])
+@login_required
+def account():
+
+    name = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
+
+    return render_template("account.html", name=name[0])
+
