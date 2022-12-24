@@ -13,10 +13,36 @@
             <p class="p-4 m-0 fs-3">{{ name["username"] }}</p>
         </div>
 
-        <div>
-            <button class="btn border-pass">Change Password</button>
-            
-        </div>
+        <!-- <div>
+            <button class="btn border-pass navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">Change Password</button>
+            <div class="collapse navbar-collapse card-bg" id="navbarScroll">
+                <form class="d-flex align-items-center flex-column justify-content-around h-pass">
+                    <label for="new-pass">New Password</label>
+                    <input class="pass-input" type="password" name="new-pass">
+
+                    <label for="confirm-pass">Confirm Password</label>
+                    <input class="pass-input" type="password" name="confirm-pass">
+                </form>
+            </div>
+        </div> -->
+
+
+        <nav class="bg-pass br-14">
+            <div class="container-fluid p-0 ">
+                <button class="btn border-pass navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll1" aria-controls="navbarScroll1" aria-expanded="false" aria-label="Toggle navigation">Change Password</button>
+                <div class="collapse navbar-collapse " id="navbarScroll1">
+                    <form class="d-flex align-items-center flex-column justify-content-evenly h-pass">
+                        <label for="new-pass">New Password</label>
+                        <input class="pass-input" type="password" name="new-pass">
+    
+                        <label for="confirm-pass">Confirm Password</label>
+                        <input class="pass-input" type="password" name="confirm-pass">
+
+                        <button class="btn save-pass" type="submit">Save</button>
+                    </form>
+                </div>
+            </div>
+          </nav>
     </div>
     
     

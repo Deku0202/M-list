@@ -20,6 +20,44 @@ table
     border-spacing: 0 20px;
 }
 
+.spe-width
+{
+    width: 204px;
+}
+
+.pass-input
+{
+    width: 80%;
+    border-radius: 14px;
+    height: 35px;
+    border: none;
+    padding: 15px;
+}
+
+.bg-pass
+{
+    background-color: rgb(211, 211, 211);
+}
+
+.save-pass
+{
+    margin: 15px;
+    background-color: #ffffff;
+    color: #000344;
+    border-radius: 10px;
+}
+
+.h-pass
+{
+    height: 250px;
+    width: 200px;
+}
+
+.br-14
+{
+    border-radius: 14px;
+}
+
 .border-pass
 {
     border-radius: 14px;
