@@ -34,6 +34,11 @@ table
     padding: 15px;
 }
 
+.pass-input:focus
+{
+    outline: none;
+}
+
 .bg-pass
 {
     background-color: rgb(211, 211, 211);
@@ -45,6 +50,11 @@ table
     background-color: #ffffff;
     color: #000344;
     border-radius: 10px;
+}
+
+.save-pass:focus
+{
+    color: #00044e;
 }
 
 .h-pass
@@ -75,6 +85,12 @@ table
 }
 
 .border-pass:focus
+{
+    outline: 0;
+    box-shadow: none;
+}
+
+.btn:focus
 {
     outline: 0;
     box-shadow: none;
@@ -150,11 +166,47 @@ table
     border-radius: 10px;
 }
 
+.success
+{
+    position: fixed;
+    padding: 15px;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffff;
+    background-color: #000331;
+    border-radius: 10px;
+}
+
+.changed-pass
+{
+    position: fixed;
+    padding: 15px;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffff;
+    background-color: #000331;
+    border-radius: 10px;
+}
+
 .error
 {
     position: fixed;
     padding: 15px;
     bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffff;
+    background-color: #ef2f2f;
+    border-radius: 10px;
+}
+
+.required-field
+{
+    position: fixed;
+    padding: 15px;
+    top: 100px;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #ffff;

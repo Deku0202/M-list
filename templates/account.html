@@ -31,18 +31,36 @@
             <div class="container-fluid p-0 ">
                 <button class="btn border-pass navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll1" aria-controls="navbarScroll1" aria-expanded="false" aria-label="Toggle navigation">Change Password</button>
                 <div class="collapse navbar-collapse " id="navbarScroll1">
-                    <form class="d-flex align-items-center flex-column justify-content-evenly h-pass">
-                        <label for="new-pass">New Password</label>
-                        <input class="pass-input" type="password" name="new-pass">
+                    <form class="d-flex align-items-center flex-column justify-content-evenly h-pass" action="/chgpass" method="POST" onsubmit="chgpass (event)">
+                        <label for="newpass">New Password</label>
+                        <input class="pass-input" id="newpass" type="password" name="newpass">
     
-                        <label for="confirm-pass">Confirm Password</label>
-                        <input class="pass-input" type="password" name="confirm-pass">
+                        <label for="confirmpass">Confirm Password</label>
+                        <input class="pass-input" id="confirmpass" type="password" name="confirmpass">
 
                         <button class="btn save-pass" type="submit">Save</button>
                     </form>
                 </div>
             </div>
           </nav>
+
+        <div class="message 200">
+            <div class="changed-pass" role="alert" >
+                Pass Changed
+            </div>
+        </div>
+
+        <div class="message 400">
+            <div class="required-field" role="alert" >
+                Fill Required Field
+            </div>
+        </div>
+
+        <div class="message 500">
+            <div class="required-field" role="alert" >
+                Add Same Pass
+            </div>
+        </div>
     </div>
     
     
