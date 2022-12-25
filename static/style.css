@@ -52,7 +52,7 @@ table
     border-radius: 10px;
 }
 
-.save-pass:focus
+.save-pass:focus, .save-pass:hover
 {
     color: #00044e;
 }
