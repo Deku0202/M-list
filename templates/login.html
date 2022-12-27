@@ -81,7 +81,10 @@
                             {% if d == 1 or a == 0 %}
                             <div>
                                 <i class="fa-solid fa-lock position-absolute p-3"></i>
-                                <input class="h-4 need p-3 ps-5" type="password" name="password">
+                                <input class="h-4 need p-3 ps-5" type="password" id="password" name="password">
+                                <span class="reveal-span position-absolute">
+                                    <i class="fa-regular reveal fa-eye" id="passeye" onclick="passreveal()"></i>
+                                </span>
                             </div>
 
                             <div class="text-start enter ms-2">
@@ -94,10 +97,13 @@
 
                                 <i class="fa-solid fa-lock position-absolute p-3"></i>
                                 {% if d == 0 %}
-                                <input class="h-4 p-3 ps-5" type="password" name="password" value="{{ password }}">
+                                <input class="h-4 p-3 ps-5" type="password" id="password" name="password" value="{{ password }}">
                                 {% else %}
-                                <input class="h-4 p-3 ps-5" type="password" name="password">
+                                <input class="h-4 p-3 ps-5" type="password" id="password" name="password">
                                 {% endif %}
+                                <span class="reveal-span position-absolute">
+                                    <i class="fa-regular reveal fa-eye" id="passeye" onclick="passreveal()"></i>
+                                </span>
                                 
                             </div>
                             {% endif %}
