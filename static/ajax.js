@@ -31,3 +31,31 @@ function add(e, num){
       }
     })
   };
+
+function chgpass(e){
+  e.preventDefault();
+  $.ajax({
+    type:'POST',
+    url:'/chgpass',
+    data:{
+      newpass:$("#newpass").val(),
+      confirmpass:$("#confirmpass").val()
+    },
+    success: function() { 
+      $('.200').fadeIn('slow');
+      $('.200').delay(3000).fadeOut('slow');
+    },
+    error: function (jqXHR) {
+      if (jqXHR.status == 401)
+      {
+        $('.400').fadeIn('slow');
+        $('.400').delay(3000).fadeOut('slow');
+      }
+      else if (jqXHR.status == 402)
+      {
+        $('.500').fadeIn('slow');
+        $('.500').delay(3000).fadeOut('slow');
+      }
+    }
+  })
+};

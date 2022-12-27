@@ -274,3 +274,33 @@ def delete():
         return render_template("delete.html", lists=plist)
         
 
+@app.route("/account", methods=["GET"])
+@login_required
+def account():
+
+    name = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
+
+    return render_template("account.html", name=name[0])
+
+
+@app.route("/chgpass", methods=["POST"])
+@login_required
+def change_password():
+
+    newpassword = request.form.get("newpass")
+    confirmpassword = request.form.get("confirmpass")
+
+    if not newpassword or not confirmpassword:
+        return jsonify({'error': 'fill required field'}), 401
+
+    if newpassword != confirmpassword:
+        return  jsonify({'error': 'Add same pass'}), 402
+
+    # generate the hash password to insert
+    pwhash = generate_password_hash(confirmpassword, method='pbkdf2:sha256', salt_length=8)
+
+    #change password)
+    db.execute("UPDATE users SET hash = ? WHERE id = ?", pwhash, session["user_id"])
+
+    return jsonify({'success': 'good'}), 200
+

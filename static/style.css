@@ -20,6 +20,88 @@ table
     border-spacing: 0 20px;
 }
 
+.spe-width
+{
+    width: 204px;
+}
+
+.pass-input
+{
+    width: 80%;
+    border-radius: 14px;
+    height: 35px;
+    border: none;
+    padding: 15px;
+}
+
+.pass-input:focus
+{
+    outline: none;
+}
+
+.bg-pass
+{
+    background-color: rgb(211, 211, 211);
+}
+
+.save-pass
+{
+    margin: 15px;
+    background-color: #ffffff;
+    color: #000344;
+    border-radius: 10px;
+}
+
+.save-pass:focus, .save-pass:hover
+{
+    color: #00044e;
+} 
+
+.h-pass
+{
+    height: 250px;
+    width: 200px;
+}
+
+.br-14
+{
+    border-radius: 14px;
+}
+
+.border-pass
+{
+    border-radius: 14px;
+    padding: 15px 25px;
+    background-color: white;
+    color: #000344;
+    font-size: 1.1rem;
+    border: none;
+}
+
+.border-pass:hover
+{
+    background-color: rgb(250, 250, 250);
+    color: #00044e;
+}
+
+.border-pass:focus
+{
+    outline: 0;
+    box-shadow: none;
+}
+
+.btn:focus
+{
+    outline: 0;
+    box-shadow: none;
+}
+
+.user
+{
+    width: 50%;
+    border-radius: 50%;
+}
+
 .bin
 {
     border: none;
@@ -84,11 +166,47 @@ table
     border-radius: 10px;
 }
 
+.success
+{
+    position: fixed;
+    padding: 15px;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffff;
+    background-color: #000331;
+    border-radius: 10px;
+}
+
+.changed-pass
+{
+    position: fixed;
+    padding: 15px;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffff;
+    background-color: #000331;
+    border-radius: 10px;
+}
+
 .error
 {
     position: fixed;
     padding: 15px;
     bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffff;
+    background-color: #ef2f2f;
+    border-radius: 10px;
+}
+
+.required-field
+{
+    position: fixed;
+    padding: 15px;
+    top: 100px;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #ffff;

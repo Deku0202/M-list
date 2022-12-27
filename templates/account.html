@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account
+{% endblock %}
+
+{% block main %}
+    <div class="d-flex align-items-center flex-column pt-5">
+        <div>
+            <img class="user" src="https://startupheretoronto.com/wp-content/uploads/2019/03/default-user-image-2.png" alt="user">
+        </div>
+        <div>
+            <p class="p-4 m-0 fs-3">{{ name["username"] }}</p>
+        </div>
+
+        <!-- <div>
+            <button class="btn border-pass navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">Change Password</button>
+            <div class="collapse navbar-collapse card-bg" id="navbarScroll">
+                <form class="d-flex align-items-center flex-column justify-content-around h-pass">
+                    <label for="new-pass">New Password</label>
+                    <input class="pass-input" type="password" name="new-pass">
+
+                    <label for="confirm-pass">Confirm Password</label>
+                    <input class="pass-input" type="password" name="confirm-pass">
+                </form>
+            </div>
+        </div> -->
+
+
+        <nav class="bg-pass br-14">
+            <div class="container-fluid p-0 ">
+                <button class="btn border-pass navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll1" aria-controls="navbarScroll1" aria-expanded="false" aria-label="Toggle navigation">Change Password</button>
+                <div class="collapse navbar-collapse " id="navbarScroll1">
+                    <form class="d-flex align-items-center flex-column justify-content-evenly h-pass" action="/chgpass" method="POST" onsubmit="chgpass (event)">
+                        <label for="newpass">New Password</label>
+                        <input class="pass-input" id="newpass" type="password" name="newpass">
+    
+                        <label for="confirmpass">Confirm Password</label>
+                        <input class="pass-input" id="confirmpass" type="password" name="confirmpass">
+
+                        <button class="btn save-pass" type="submit">Save</button>
+                    </form>
+                </div>
+            </div>
+          </nav>
+
+        <div>
+            <form action="/logout">
+                <button class="btn save-pass" type="submit">Logout</button>
+            </form>
+        </div>
+
+        <div class="message 200">
+            <div class="changed-pass" role="alert" >
+                Pass Changed
+            </div>
+        </div>
+
+        <div class="message 400">
+            <div class="required-field" role="alert" >
+                Fill Required Field
+            </div>
+        </div>
+
+        <div class="message 500">
+            <div class="required-field" role="alert" >
+                Add Same Pass
+            </div>
+        </div>
+    </div>
+    
+    
+{% endblock %} 
