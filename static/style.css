@@ -8,11 +8,17 @@
     box-sizing: border-box;
 }
 
+.reveal
+{
+    color: #7a797e;
+}
+
 body
 {
     background-color: #E6F2FF;
     overflow-x: hidden;
 }
+
 
 table
 {
@@ -62,6 +68,8 @@ table
     height: 250px;
     width: 200px;
 }
+
+
 
 .br-14
 {
@@ -450,6 +458,14 @@ table
 
 @media screen and (min-width: 767px)
 {
+    
+    span.reveal-span
+    {
+        transform: translate(0, 50%);
+        right: 17%;
+        cursor: pointer;
+    }
+
     .result-box
     {
         width: 50vw;
@@ -476,7 +492,15 @@ table
 }
 
 @media screen and (min-width: 993px)
-{   
+{       
+
+    span.reveal-span
+    {
+        transform: translate(0, 50%);
+        right: 14.5%;
+        cursor: pointer;
+    }
+    
     .search-bar
     {
         width: 30vw;
@@ -589,6 +613,14 @@ table
 
 @media screen and (max-width: 993px)
 {     
+
+    span.reveal-span
+    {
+        transform: translate(0, 50%);
+        right: 19%;
+        cursor: pointer;
+    }
+
     .rating
     {
         width: 70px;
