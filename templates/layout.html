@@ -75,5 +75,47 @@
         <script src="../static/ajax.js" defer></script>
 
     </body>
+
+    <script>
+      var state = false;
+      var constate = false;
+      var pass = document.getElementById("password")
+      var passeye = document.getElementById("passeye")
+
+      var confirm = document.getElementById("confirm")
+      var coneye = document.getElementById("coneye")
+      
+      function passreveal ()
+      {
+          if (state)
+          {
+              pass.setAttribute("type", "password")
+              passeye.style.color = "#7a797e";
+              state = false;
+          }
+          else
+          {
+              pass.setAttribute("type", "text")
+              passeye.style.color = "#000344";
+              state = true;
+          }
+      }
+
+      function conpassreveal ()
+      {
+          if (constate)
+          {
+              confirm.setAttribute("type", "password")
+              coneye.style.color = "#7a797e";
+              constate = false;
+          }
+          else
+          {
+              confirm.setAttribute("type", "text")
+              coneye.style.color = "#000344";
+              constate = true;
+          }
+      }
+  </script>
     
 </html>
