@@ -8,11 +8,17 @@
     box-sizing: border-box;
 }
 
+.reveal
+{
+    color: #7a797e;
+}
+
 body
 {
     background-color: #E6F2FF;
     overflow-x: hidden;
 }
+
 
 table
 {
@@ -26,7 +32,8 @@ table
 }
 
 .pass-input
-{
+{   
+    margin-top: 5px;
     width: 80%;
     border-radius: 14px;
     height: 35px;
@@ -62,6 +69,8 @@ table
     height: 250px;
     width: 200px;
 }
+
+
 
 .br-14
 {
@@ -447,9 +456,26 @@ table
     color: #01088d;
 }
 
+@media screen and (max-width: 767px)
+{
+    span.change-reveal
+    {
+        transform: translate(0, 50%);
+        right: 32% !important;
+        cursor: pointer;
+    }
+}
 
 @media screen and (min-width: 767px)
 {
+    
+    span.reveal-span
+    {
+        transform: translate(0, 50%);
+        right: 17%;
+        cursor: pointer;
+    }
+
     .result-box
     {
         width: 50vw;
@@ -476,7 +502,22 @@ table
 }
 
 @media screen and (min-width: 993px)
-{   
+{       
+
+    span.reveal-span
+    {
+        transform: translate(0, 50%);
+        right: 14.5%;
+        cursor: pointer;
+    }
+
+    span.change-reveal
+    {
+        transform: translate(0, 50%);
+        right: 46.5%;
+        cursor: pointer;
+    }
+    
     .search-bar
     {
         width: 30vw;
@@ -589,6 +630,21 @@ table
 
 @media screen and (max-width: 993px)
 {     
+
+    span.reveal-span
+    {
+        transform: translate(0, 50%);
+        right: 19%;
+        cursor: pointer;
+    }
+
+    span.change-reveal
+    {
+        transform: translate(0, 50%);
+        right: 42%;
+        cursor: pointer;
+    }
+
     .rating
     {
         width: 70px;

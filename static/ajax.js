@@ -38,8 +38,8 @@ function chgpass(e){
     type:'POST',
     url:'/chgpass',
     data:{
-      newpass:$("#newpass").val(),
-      confirmpass:$("#confirmpass").val()
+      newpass:$("#password").val(),
+      confirmpass:$("#confirm").val()
     },
     success: function() { 
       $('.200').fadeIn('slow');
