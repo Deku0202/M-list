@@ -52,7 +52,10 @@
                     <tr>
                         <td class="pe-2">{{ row_no }}.</td>
                         <td class="img"><img class="img" src="{{ list["img"] }}" alt="img"></td>
-                        <td class="fs-small ps-3 text-start lg-title">{{ list["name"] }}</td>
+                        <td class="fs-small ps-3 text-start title-link lg-title">
+                            <a class="title-link" href="https://www.imdb.com/title/{{ list["title"] }}" target="_blank"> {{ list["name"] }} </a>
+                        </td>
+                        <!-- <td class="fs-small ps-3 text-start lg-title">{{ list["name"] }}</td> -->
                         <td hidden>{{ list["title"] }}</td>
                         <td class="display-med-none">{{ list["date"] }}</td>
                         <td class="display-med-none">{{ list["type"] }}</td>
