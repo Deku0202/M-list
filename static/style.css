@@ -8,10 +8,6 @@
     box-sizing: border-box;
 }
 
-.reveal
-{
-    color: #7a797e;
-}
 
 body
 {
@@ -24,6 +20,22 @@ table
 {
     border-collapse: separate;
     border-spacing: 0 20px;
+}
+
+.title-link
+{
+    text-decoration: none;
+    color: #000344;
+}
+
+.title-link:hover
+{
+    color: #01088d
+}
+
+.reveal
+{
+    color: #7a797e;
 }
 
 .spe-width
