@@ -304,3 +304,9 @@ def change_password():
 
     return jsonify({'success': 'good'}), 200
 
+
+@app.route("/about")
+@login_required
+def about():
+
+    return render_template("aboutus.html")
